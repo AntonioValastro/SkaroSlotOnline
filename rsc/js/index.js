@@ -103,7 +103,7 @@
             box.classList.add('box');
             box.style.width = door.clientWidth + 'px';
             box.style.height = door.clientHeight + 'px';
-            box.src = "../rsc/img/"+pool[i]+".png";
+            box.src = "./rsc/img/"+pool[i]+".png";
             box.id="item"+pool[i];
             box.dataset.position = items_counter;
             //console.log(items_counter)
