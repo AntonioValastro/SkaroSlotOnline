@@ -1,0 +1,2 @@
+# SkaroSlot
+ My slot machine
