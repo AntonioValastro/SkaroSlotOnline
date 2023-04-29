@@ -1,0 +1,202 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sigmar', sans-serif;
+  }
+  
+  #app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*
+    background-image: url('../../img/AciTrezza.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;*/
+    background-color: #026f91;
+  }
+  
+  .doors {
+    display: flex;
+    margin-top: 2%;
+  }
+  
+  .door {
+    background: #fafafa;
+    width: 140px;
+    height: 155px;
+    overflow: hidden;
+    background-image: url("../../img/door_background.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    border-radius: 10px;
+    border: 4px solid rgb(160,109,64);
+    margin: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0.2, 0.2, 0.2, 0.2);
+  }
+  
+  .boxes {
+    /* transform: translateY(0); */
+    height: 95%;
+  }
+  
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+  }
+  
+  .buttons {
+    margin: 1rem 0 2rem 0;
+  }
+  
+  button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+
+  #spinner{
+    position: fixed;
+    top: 40%;
+    right: 2%;
+    width: 18%;
+    cursor: pointer;
+  }
+
+  #spinner:hover{
+    zoom: 1.5;
+  }
+
+  #spinner.disabled{
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  #display{
+    position: absolute;
+    bottom: 5%;
+    color: rgb(160,109,64);
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #000000;
+  }
+  
+  #saldo {
+    text-align: center;
+    margin-top: 20px;
+    position: fixed;
+    top: 15%;
+    right: 3%;
+    width: 16%;
+    padding: 10px 0;
+    font-size: 24px;
+    border: 4px solid rgb(207,164,11);
+    background-image: url("../../img/wood.webp");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    color: rgb(101,254,254);
+    border-radius: 20px;
+    text-shadow: 2px 2px 2px #000000;
+
+  }
+  
+  .info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+#item0.act{
+    background-color: yellow;
+    animation: spin 1s linear infinite; 
+    zoom: 110%;
+    transition: all 1s ease;    
+}
+
+#item1.act{
+    background-color: rgb(0, 247, 234);
+    animation: spin 1s linear infinite;  
+    zoom: 110%;
+    transition: all 1s ease; 
+}
+
+#item2.act{
+    background-color: rgb(255, 174, 0);
+    animation: spin 1s linear infinite; 
+    zoom: 110%;
+    transition: all 1s ease;  
+}
+
+#item3.act{
+    background-color: rgb(255, 0, 200);
+    animation: spin 1s linear infinite; 
+    zoom: 110%;
+    transition: all 1s ease;  
+}
+
+#item4.act{
+    background-color: rgb(253, 17, 17);
+    animation: spin 1s linear infinite; 
+    zoom: 110%;
+    transition: all 1s ease;  
+}
+
+#item5.act{
+    background-color: rgb(21, 255, 0);
+    animation: spin 1s linear infinite;
+    zoom: 110%;
+    transition: all 1s ease; 
+}
+
+#item6.act{
+    background-color: rgb(89, 0, 255);
+    animation: spin 1s linear infinite;
+    zoom: 110%;
+    transition: all 1s ease; 
+}
+
+#item7.act{
+    background-color: rgb(0, 0, 0);
+    animation: spin 1s linear infinite; 
+    zoom: 110%;
+    transition: all 1s ease;  
+}
+
+#item7 {
+    background-color: rgb(255, 187, 0);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+#overlay{
+    position: fixed;
+    height: 100vh;
+    width: 100vW;
+    z-index: 5;
+    opacity: 0.9;
+    background-color: black;
+
+    color: white;
+    font-size: 36px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
