@@ -101,8 +101,6 @@
             let box;
             box = document.createElement('img');
             box.classList.add('box');
-            box.style.width = door.clientWidth + 'px';
-            box.style.height = door.clientHeight + 'px';
             box.src = "./rsc/img/"+pool[i]+".png";
             box.id="item"+pool[i];
             box.dataset.position = items_counter;
@@ -173,8 +171,8 @@
                 }
             }
         }
-        
-        //console.log("Line 1 First element: "+firstElement)
+
+        console.log("Line 1 First element: "+firstElement)
         for(let i=1; i<5; i++){
             //console.log("Line 1 New Item: "+items_matrix[i][0])
             if(items_matrix[i][0]==firstElement || items_matrix[i][0]=='0')
@@ -182,15 +180,13 @@
             else
                 break;
         }
-        console.log(document.getElementById("door_3_0").childNodes[0].childNodes[0])
         //console.log("Line 1 Winning element: "+winningElement)
-        if(winningElement > 2){
-            
+        if(winningElement > 2  && firstElement !="7"){
             document.getElementById("door_0_0").childNodes[1].childNodes[0].classList.add("act");
             document.getElementById("door_1_0").childNodes[1].childNodes[0].classList.add("act");
             document.getElementById("door_2_0").childNodes[1].childNodes[0].classList.add("act");
             if(winningElement>3){                    
-                document.getElementById("door_3_0").childNodes[0].classList.add("act");
+                document.getElementById("door_3_0").childNodes[1].childNodes[0].classList.add("act");
                 if(winningElement > 4)
                     document.getElementById("door_4_0").childNodes[1].childNodes[0].classList.add("act");
             }
@@ -228,7 +224,6 @@
                 }
             }
         }
-
         //console.log("Line 2 First element: "+firstElement)
         for(let i=1; i<5; i++){
             //console.log("Line 2 New Item: "+items_matrix[i][1])
@@ -238,7 +233,7 @@
                 break;
         }
         //console.log("Line 2 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2  && firstElement !="7"){
             document.getElementById("door_0_1").childNodes[1].childNodes[0].classList.add("act");
             document.getElementById("door_1_1").childNodes[1].childNodes[0].classList.add("act");
             document.getElementById("door_2_1").childNodes[1].childNodes[0].classList.add("act");
@@ -282,7 +277,7 @@
                 break;
         }
         //console.log("Line 3 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2  && firstElement !="7"){
             document.getElementById("door_0_2").childNodes[1].childNodes[0].classList.add("act");
             document.getElementById("door_1_2").childNodes[1].childNodes[0].classList.add("act");
             document.getElementById("door_2_2").childNodes[1].childNodes[0].classList.add("act");
@@ -333,7 +328,7 @@
         }
 
         console.log("Line 4 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement !="7"){
                 document.getElementById("door_0_2").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_0").childNodes[1].childNodes[0].classList.add("act");
@@ -354,7 +349,6 @@
     function checkLine5(){
         let winningElement = 1;
         let firstElement = items_matrix[0][0];
-
         
         if(items_matrix[0][0] == "0"){
             firstElement = items_matrix[1][1];
@@ -384,7 +378,7 @@
         }
 
         //console.log("Line 5 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2  && firstElement !="7"){
                 document.getElementById("door_0_0").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_2").childNodes[1].childNodes[0].classList.add("act");
@@ -406,7 +400,6 @@
         let winningElement = 1;
         let firstElement = items_matrix[0][2];
 
-        
         if(items_matrix[0][2] == "0"){
             firstElement = items_matrix[1][2];
             if(items_matrix[1][2] == "0"){
@@ -435,12 +428,12 @@
         }
 
         //console.log("Line 4 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement !="7"){
                 document.getElementById("door_0_2").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_2").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_1").childNodes[1].childNodes[0].classList.add("act");
                 if(winningElement>3){                    
-                    document.getElementById("door_3_0").childNodes[0].classList.add("act");
+                    document.getElementById("door_3_0").childNodes[1].childNodes[0].classList.add("act");
                     if(winningElement > 4)
                         document.getElementById("door_4_0").childNodes[1].childNodes[0].classList.add("act");
                 }
@@ -486,7 +479,7 @@
         }
 
         //console.log("Line 7 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement!="7"){
                 document.getElementById("door_0_0").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_0").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_1").childNodes[1].childNodes[0].classList.add("act");
@@ -537,7 +530,7 @@
         }
 
         //console.log("Line 8 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement !="7"){
                 document.getElementById("door_0_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_2").childNodes[1].childNodes[0].classList.add("act");
@@ -588,7 +581,7 @@
         }
 
         //console.log("Line 10 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement !="7"){
                 document.getElementById("door_0_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_0").childNodes[1].childNodes[0].classList.add("act");
@@ -639,7 +632,7 @@
         }
 
         //console.log("Line 10 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement !="7"){
                 document.getElementById("door_0_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_2").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_2").childNodes[1].childNodes[0].classList.add("act");
@@ -690,19 +683,51 @@
         }
 
         //console.log("Line 8 Winning element: "+winningElement)
-        if(winningElement > 2){
+        if(winningElement > 2 && firstElement !="7"){
                 document.getElementById("door_0_1").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_1_0").childNodes[1].childNodes[0].classList.add("act");
                 document.getElementById("door_2_0").childNodes[1].childNodes[0].classList.add("act");
                 if(winningElement>3){                    
-                    document.getElementById("door_3_0").childNodes[0].classList.add("act");
+                    document.getElementById("door_3_0").childNodes[1].childNodes[0].classList.add("act");
                     if(winningElement > 4)
                         document.getElementById("door_4_1").childNodes[1].childNodes[0].classList.add("act");
                 }
             win(firstElement,winningElement,11);
             window.setTimeout(deactivate_win,1000);
-            //window.setTimeout(checkLine9,1500);
-            window.setTimeout(enableSpinner,100);
+            window.setTimeout(checkScatter,1500);
+        }
+        else{
+            window.setTimeout(checkScatter,100);
+        }
+    }
+
+    function checkScatter(){
+        let winningElement = 0;
+        let positions = new Array();
+
+        for(let row = 0; row < 3; row++)
+            for(let col = 0; col < 5; col++){
+                if(items_matrix[col][row] == "7"){
+                    winningElement++;
+                    positions.push(col);
+                    positions.push(row);
+                }
+            }
+
+
+        if(winningElement > 2){
+                document.getElementById("door_"+positions[0]+"_"+positions[1]).childNodes[1].childNodes[0].classList.add("act");
+                document.getElementById("door_"+positions[2]+"_"+positions[3]).childNodes[1].childNodes[0].classList.add("act");
+                document.getElementById("door_"+positions[4]+"_"+positions[5]).childNodes[1].childNodes[0].classList.add("act");
+                if(winningElement>3){ 
+                    console.log( document.getElementById("door_"+positions[6]+"_"+positions[7]))                   
+                    document.getElementById("door_"+positions[6]+"_"+positions[7]).childNodes[1].childNodes[0].classList.add("act");
+                    if(winningElement > 4)
+                        document.getElementById("door_"+positions[8]+"_"+positions[9]).childNodes[1].childNodes[0].classList.add("act");
+                }
+            //win(firstElement,winningElement,11);
+            window.setTimeout(deactivate_win,1000);
+            window.setTimeout(enableSpinner,1100);
         }
         else{
             window.setTimeout(enableSpinner,100);
@@ -716,7 +741,6 @@
     function win(winning_item, winning_number, line){
         console.log("Winning item: "+winning_item)
         console.log("Winning number: "+winning_number)
-        console.log("Vinti "+ 50*winning_number+" in linea "+line)
 
         const mp3 = document.getElementById("mp3");
 
@@ -769,7 +793,7 @@
                 else if(winning_number == 5){
                     crediti_vinti = 28;
                 }
-                mp3.src="../rsc/mp3/marco_sound.mp3";
+                mp3.src="./rsc/mp3/marco_sound.mp3";
                 mp3.play();
             }
             else if(winning_item == 5){
