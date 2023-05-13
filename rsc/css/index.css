@@ -127,6 +127,11 @@ body {
     text-shadow: 2px 2px 2px #000000;
 
   }
+
+  #saldo_value{
+    display: contents;
+    transition: all 1s ease;
+  }
   
   .info {
     position: fixed;
@@ -201,7 +206,7 @@ body {
     100% { transform: rotate(360deg); }
   }
 
-#overlay{
+.overlay{
     position: fixed;
     height: 100vh;
     width: 100vW;
@@ -216,4 +221,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@property --num {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+#display_counter {
+  transition: --num 1s;
+  counter-reset: num var(--num);
 }
