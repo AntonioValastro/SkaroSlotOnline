@@ -77,7 +77,6 @@
     var importo_giocato = 20;
     var round_win = 0;
 
-    document.querySelector('#spinner').addEventListener('click', init, true);
     document.querySelector('#spinner').addEventListener('click', spin);
     document.querySelector('#overlay').addEventListener('click', overlayOff);
     overlay_scatter.style.display = "none";
@@ -90,7 +89,7 @@
 
         saldo.textContent = saldo_corrente;
         //console.clear()
-        console.log(items_matrix)
+        //console.log(items_matrix)
         for (const door of doors) {
             const boxes = door.querySelector('.boxes');
             const boxesClone = boxes.cloneNode(false);
@@ -169,10 +168,10 @@
         round_win = 0;
         items_counter = 0;
         saldo_corrente -= importo_giocato;
-        init(false, 1, 2);
         document.getElementById("spinner").classList.add("disabled");
-        document.querySelector('#spinner').removeEventListener('click', init);
-        document.querySelector('#spinner').removeEventListener('click', spin);
+        document.getElementById("spinner").removeEventListener('click', spin);
+        init(true);
+        init(false, 1, 2);
 
         mp3.src = "./rsc/mp3/random_wheel.mp3";
         mp3.play();
@@ -262,7 +261,7 @@
     }
     
     async function spinBonus(number){
-        init();
+        init(true);
         document.getElementById("spinner").classList.add("disabled");
         document.querySelector('#spinner').removeEventListener('click', init);
         document.querySelector('#spinner').removeEventListener('click', spin);
@@ -306,7 +305,6 @@
         else {
             display.textContent = "Vinti " + round_win + " crediti";
         }
-        document.querySelector('#spinner').addEventListener('click', init);
         document.querySelector('#spinner').addEventListener('click', spin);
         document.getElementById("spinner").classList.remove("disabled");
     }
